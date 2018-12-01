@@ -1,0 +1,25 @@
+{%  extends 'base.html.twig' %}
+
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <h1>
+        Envoi d'une demande
+    </h1>
+
+    {{ form_start(formArticle) }}
+
+    {{ form_row(formArticle.name, {'attr': {'placeholder': "Votre Nom"}}) }}
+    {{ form_row(formArticle.sujet, {'attr': {'placeholder': "Votre Sujet"}}) }}
+    {{ form_row(formArticle.email, {'attr': {'placeholder': "Votre Email"}}) }}
+    {{ form_row(formArticle.message, {'attr': {'placeholder': "Votre message"}}) }}
+    {{ form_row(formArticle.sexe, {'attr': {'placeholder': "Votre Sexe (j'ai voulu faire un select mais j'ai pas réussi)"}}) }}
+
+    <button type="submit" class="btn btn-succes">
+        Envoyer
+    </button>
+
+    {{ form_end(formArticle) }}
+
+{% endblock %}

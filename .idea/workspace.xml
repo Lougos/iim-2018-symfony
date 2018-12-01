@@ -46,7 +46,7 @@
         <counts>
           <entry key="env" value="31" />
           <entry key="gitignore" value="1" />
-          <entry key="php" value="3052" />
+          <entry key="php" value="3060" />
           <entry key="twig" value="2334" />
           <entry key="yaml" value="109" />
         </counts>
@@ -54,7 +54,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="31" />
-          <entry key="PHP" value="3052" />
+          <entry key="PHP" value="3060" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Twig" value="2334" />
           <entry key="YAML" value="109" />
@@ -100,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
               <folding>
                 <element signature="e#34#57#0#PHP" expanded="true" />
                 <element signature="e#1044#1066#1#PHP" expanded="true" />
@@ -401,12 +401,12 @@
       <workItem from="1542957884829" duration="8525000" />
       <workItem from="1543080272770" duration="4642000" />
       <workItem from="1543483203652" duration="6805000" />
-      <workItem from="1543660736862" duration="18133000" />
+      <workItem from="1543660736862" duration="18345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48549000" />
+    <option name="totallyTimeSpent" value="48761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -652,8 +652,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
             <element signature="e#34#57#0#PHP" expanded="true" />
             <element signature="e#1044#1066#1#PHP" expanded="true" />

@@ -7,7 +7,9 @@ use App\Entity\Contact;
 use App\Form\ArticleType;
 use App\Form\ContactType;
 use App\Repository\ArticleRepository;
+use App\Repository\ContactRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use http\Env\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -53,11 +55,14 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if($request->getMethod() === 'POST') {
+
             $manager->persist($contact);
             $manager->flush();
         }
-
-        return $this->render('blog/createContact.html.twig');
+        $contact->setCreatedAt(new \DateTime());
+        return $this->render('blog/createContact.html.twig', [
+            'formContact' => $form->createView(),
+            ]);
     }
 
     /**
@@ -106,6 +111,20 @@ class BlogController extends AbstractController
         return $this->render('blog/show.html.twig', [
             'article' =>$article
         ]);
+    }
+
+    /**
+     * @Route("//log/{id}", name="article_delete", methods="DELETE")
+     */
+    public function delete(Request $request, Article $article): \Symfony\Component\HttpFoundation\RedirectResponse
+    {
+        if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('_token'))) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($article);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('blog');
     }
 
 

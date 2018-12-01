@@ -1,6 +1,6 @@
 {%  extends 'base.html.twig' %}
 
-{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+{% form_theme formContact 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
 
@@ -8,7 +8,7 @@
         Envoi d'une demande
     </h1>
 
-    {{ form_start(formArticle) }}
+    {{ form_start(formContact) }}
 
     {{ form_row(formArticle.name, {'attr': {'placeholder': "Votre Nom"}}) }}
     {{ form_row(formArticle.sujet, {'attr': {'placeholder': "Votre Sujet"}}) }}
@@ -20,6 +20,6 @@
         Envoyer
     </button>
 
-    {{ form_end(formArticle) }}
+    {{ form_end(formContact) }}
 
 {% endblock %}

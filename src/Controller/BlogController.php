@@ -47,13 +47,15 @@ class BlogController extends AbstractController
     /**
      * @Route("/contact", name="contact_show")
      */
-    public function contact(Contact $contact, Request $request, ObjectManager $manager){
+    public function contact(Request $request, ObjectManager $manager){
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        $manager->persist($contact);
-        $manager->flush();
+        if($request->getMethod() === 'POST') {
+            $manager->persist($contact);
+            $manager->flush();
+        }
 
         return $this->render('blog/createContact.html.twig');
     }

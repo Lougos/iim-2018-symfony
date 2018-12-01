@@ -31,10 +31,31 @@ class BlogController extends AbstractController
     }
 
     /**
+     * @Route("/about", name="about_show")
+     */
+    public function about(){
+        return $this->render('blog/about.html.twig');
+    }
+
+    /**
      * @Route("/", name="home")
      */
     public function home(){
         return $this->render('blog/home.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact_show")
+     */
+    public function contact(Contact $contact, Request $request, ObjectManager $manager){
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        $manager->persist($contact);
+        $manager->flush();
+
+        return $this->render('blog/createContact.html.twig');
     }
 
     /**
@@ -85,24 +106,5 @@ class BlogController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/blog/about", name="about_show")
-     */
-    public function about(){
-        return $this->render('blog/about.html.twig');
-    }
 
-    /**
-     * @Route("/blog/contact", name="contact_show")
-     */
-    public function contact(Contact $contact, Request $request, ObjectManager $manager){
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
-
-        $manager->persist($contact);
-        $manager->flush();
-
-        return $this->render('blog/createContact.html.twig');
-    }
 }
